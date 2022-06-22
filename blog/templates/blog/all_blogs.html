@@ -1,12 +1,20 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<div class="container text-center">
+    <h1>Портфолио</h1>
+</div>
+
+<div class="container text-center">
+    <h3>Вооооу, я что-то написал</h3>
+</div>
 
 {% for blog in blogs %}
 
-<div>
-<h2> {{ blog.title }} </h2>
+<div class="container">
+<a href="{% url 'blog:detail' blog.id %}"><h2> {{ blog.title }} </h2></a>
 <time> {{ blog.date }} </time>
 <h4>{{ blog.information }}</h4>
+<br>
 </div>
 
 {% endfor %}
